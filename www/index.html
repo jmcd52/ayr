@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<!--
+	Licensed to the Apache Software Foundation (ASF) under one
+	or more contributor license agreements.  See the NOTICE file
+	distributed with this work for additional information
+	regarding copyright ownership.  The ASF licenses this file
+	to you under the Apache License, Version 2.0 (the
+	"License"); you may not use this file except in compliance
+	with the License.  You may obtain a copy of the License at
+
+	http://www.apache.org/licenses/LICENSE-2.0
+
+	Unless required by applicable law or agreed to in writing,
+	software distributed under the License is distributed on an
+	"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+	 KIND, either express or implied.  See the License for the
+	specific language governing permissions and limitations
+	under the License.
+-->
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta content="width=device-width,initial-scale=1,maximum-scale=5,user-scalable=yes,viewport-fit=cover" name="viewport">
+		
+		<!-- <meta http-equiv="Content-Security-Policy" content="default-src * gap://ready file:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'"> -->
+		<!-- Custom Styles -->
+		<link rel="stylesheet" type="text/css" href="css/styles.css" />
+
+		<!-- Bootstrap and JQuery -->
+        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<script src="jquery/jquery-1.9.1.min.js"></script>
+		
+	</head>
+	<body>
+		<script type="text/javascript" src="cordova.js"></script>
+		<script type="text/javascript" src="js/sampleIndices.js"></script>
+		<script type="text/javascript" src="js/loadingPoisFromApplicationModel.js"></script>
+		<script type="text/javascript" src="js/index.js"></script>
+		<script type="text/javascript" src="js/sidebar.js"></script>
+
+			<!-- Navigation -->
+          <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+            <div class="container">
+              <a class="navbar-brand" href="#"><img src="img/AYR_Logo.png" height="50" width="150"></a>
+				<button class="btn-primary" id="sidebar-toggle" onClick="showSidebar()">ToggleSidebar</button>
+ <!--             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="#">Home
+                      <span class="sr-only">(current)</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Services</a>
+                  </li>
+                  <li class="nav-item">
+                    <button class="btn-primary" id="sidebar-toggle" onClick="showSidebar()">ToggleSidebar</button>
+                  </li>
+                </ul>
+              </div>
+-->
+            </div>
+          </nav>
+		
+            <a href="javascript:app.showBuildInformation();">
+                <div id ="header-status" data-role="header" data-position="fixed" data-theme="a">
+                    <h2 style="display: none">Home</h2>
+                </div>
+            </a>
+
+			<div id="demoList">
+						<button class="btn-primary demoLink" onclick="app.loadCustomARchitectWorldFromURL('www/world/01_ImageTracking_1_ImageOnTarget/index.html')"><p>United Kingdom (IoT)</p></button>
+						<button class="btn-primary demoLink" onclick="app.loadCustomARchitectWorldFromURL('www/world/07_3dModels_1_3dModelOnTarget/index.html')"><p>USA (3D)</p></button>
+						<button class="btn-primary demoLink" onclick="app.loadCustomARchitectWorldFromURL('www/world/07_3dModels_4_SnapToScreen/index.html')"><p>Germany (Snap3D)</p></button>
+						<button class="btn-primary demoLink" onclick="app.loadCustomARchitectWorldFromURL('www/world/10_BrowsingPois_2_AddingRadar/index.html')"><p>France (POIS)</p></button>
+			 </div>
+		<div id="rightSidebar">
+			<ul>
+				<li><a class="nav-link">Item 1</a></li>
+				<li><a class="nav-link">Item 2</a></li>
+			</ul>
+		</div>
+		
+		<!-- google map -->
+		<div id="style-selector-control" class="map-control">
+		<label><strong>Show/Hide POI's</strong></label>
+      <input type="radio" name="show-hide" id="hide-poi"
+          class="selector-control">
+      <label for="hide-poi">Hide</label>
+      <input type="radio" name="show-hide" id="show-poi"
+          class="selector-control" checked="checked">
+      <label for="show-poi">Show</label>
+		<button onClick="toggleTransport()" class="map-toggles">Show/Hide Transport</button>
+		<button onClick="toggleFood()" class="map-toggles">Show/Hide Food</button>
+    </div>
+		 	<div id="map"></div>
+
+			
+		<footer>
+			<div id="bottom">
+				<table style="width:100%">
+				<tr>
+					<td class="btmNavItemArea"><h1 class="btmNavItem">Ixem</h1></td>
+					<td class="btmNavItemArea"><h1 class="btmNavItem">Iyem</h1></td>
+					<td class="btmNavItemArea"><h1 class="btmNavItem">Izem</h1></td>
+					<td class="btmNavItemArea"><h1 class="btmNavItem">Item</h1></td>
+				</tr>
+				</table>
+			</div>
+		</footer>
+		<!-- google map -->
+	<script src="js/initMap.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCT0xOIBRyPPmeGCIC_4f_9PrV21api6Wk&callback=initMap"
+    async defer></script>
+
+		
+    <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.slim.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+		<!-- jQuery Custom Scroller CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+	</body>
+</html>

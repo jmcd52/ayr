@@ -1,0 +1,21 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "com.wikitude.phonegap.WikitudePlugin": {
+            "PACKAGE_NAME": "com.wikitude.phonegapsamples"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.wikitude.phonegapsamples"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.wikitude.phonegapsamples"
+        }
+    },
+    "dependent_plugins": {}
+}
