@@ -1,14 +1,38 @@
-body, a, h1, p
-{
-	/* font-family:Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";*/
+@font-face{
+	font-family: ayr1;
+	src: url("../vendor/Raleway/Raleway-Regular.ttf");
 }
+
+body, p, h1, h2, h3, h4, button, tr, .start-item, .btmNavItemArea
+{font-family: ayr1;}
+
+/*#attBody{margin: 0; height: 100%; overflow: hidden;}*/
 
 nav{z-index: 2;}
 #rightSidebar{position: absolute; top: 0; right: -500px; z-index: 3; background-color: red;}
 
 
 #demoList{z-index: 2; max-height: 100%; position: relative; display: inline-grid; margin-left: 5px;}
+/* comment out next line to show debug menu */
+#demoList{display: none !important;}
 .demoLink{margin-top: 5px;}
+#navButtons{margin-bottom: 5px;}
+.navButton{color: black !important;}
+#infoOverlay{position: absolute; bottom: 0; width: 100%; max-height: 40%; background-color: rgba(255,255,255,0.95);}
+#infoOverlay h1, h4, p{margin-left: 5%;}
+#detailImg{width: 90%; margin-left: 5%;}
+#detailBtn:disabled{color: black; background-color: black;}
+hr{border: 1px solid gray;}
+#foodCafeToggler{position: absolute; bottom: 1%; right:1%;}
+#cafeToggle{}
+#foodToggle{}
+#rotateButton{}
+/*#attDesc{overflow: scroll;}*/
+#distField{margin-top: 25px; margin-bottom: 25px;}
+#modelControls{display: grid; grid-gap: 1px;}
+.gridItemInfo{grid-row-start: 1; grid-row-end: 2; grid-column-start: 3; grid-column-end: 4;}
+.giRHP{grid-row-start: 1; grid-row-end: 1; grid-column-start: 2; grid-column-end: 3;}
+.giRHM{grid-row-start: 1; grid-row-end: 1; grid-column-start: 1; grid-column-end: 2;}
 
 #bottom{
 	position: absolute;
@@ -18,8 +42,8 @@ nav{z-index: 2;}
 	color: #ffffff;
 }
 
-.btmNavItemArea{width: 25%; border-style: none solid none solid; border-width: 5px; border-color: red; }
-.btmNavItem{margin-left: auto; margin-right: auto; text-align: center; font-size: 12pt;}
+.btmNavItemArea{background-color: white; width: 25%; border-style: none solid none solid; border-width: 2px; border-color: black; color: white;}
+.btmNavItem{margin-left: auto; margin-right: auto; margin-bottom: 0px; margin-top: 0px; padding-top: 16px; padding-bottom: 16px; text-align: center; font-size: 12pt; color: white; background-color: darkturquoise; width: 100%;}
 
 /* google map css */
 html, body {

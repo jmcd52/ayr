@@ -1,0 +1,73 @@
+<!-- 3D model at geolocation -->
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- disables pinch-scaling of the webview, so that gestures only do what they're supposed to -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"/>
+
+    <title></title>
+
+    <script src="https://www.wikitude.com/libs/architect.js"></script>
+    <script type="text/javascript" src="../ade.js"></script>
+	<script type="text/javascript" src="../../js/index.js"></script>
+	<link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="css/default.css">
+	
+</head>
+
+<body id="attBody">
+	
+	
+	<div id="infoBox" class="info">
+    <div  id="attractionName" class="text">Tap on an Attraction to find out more!</div>
+	</div>
+	
+	<!-- overlay to be displayed when the user presses the details button -->
+	<div id="infoOverlay">
+		<hr>
+		<p id="attDesc">Tap on an Attraction to find out more! </p>
+		<hr>
+		<h4 id="distField">Distance: <a id="poi-detail-distance"></a></h4>
+		<div id="foodCafeToggler">
+		<div id="modelControls">
+<!--			<button id="detailToggle" class="gridItemInfo" onclick="showInfo()"><img height="50px" width="50px" src="assets/infoToggle.png"></button>-->
+		
+		<button class="giRHP"><img height="50px" width="50px" id="rHP" src="assets/rHP.png"></button>
+		<button class="giRHM"><img height="50px" width="50px" id="rHM" src="assets/rHM.png"></button>
+		</div>
+	</div>
+	</div>
+	
+		<footer style="display: none;">
+			<div id="bottom">
+				<table style="width:100%">
+				<tr>
+					<td class="btmNavItemArea"><button id="detailBtn" class="btmNavItem" onClick="showInfo();" disabled>Details</button></td>
+				</tr>
+				</table>
+			</div>
+		</footer>
+	<script src="js/nav.js"></script>
+    <script src="js/3dmodelatgeolocation.js"></script>
+	<!--<script src="js/snaptoscreen.js"></script>-->
+	<!--<script>
+		function showInfo(){
+			var element= document.getElementById("infoOverlay");
+			var ibox = document.getElementById("infoBox");
+			if(element.style.display === "initial"){
+			element.style.display = "none";
+			ibox.style.display = "initial";
+			console.log("hide");
+			}else if(element.style.display = "none"){
+				element.style.display = "initial";
+				ibox.style.display = "none";
+				console.log("show");
+				
+			}
+		};
+	</script>-->
+	
+</body>
+</html>

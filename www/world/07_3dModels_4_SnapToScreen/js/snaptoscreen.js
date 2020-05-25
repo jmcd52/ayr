@@ -59,7 +59,7 @@ var World = {
             function for the onError trigger which provides a sting containing a description of the error.
          */
         this.tracker = new AR.ImageTracker(this.targetCollectionResource, {
-            onTargetsLoaded: World.showInfoBar,
+            onTargetsLoaded: World.appear,
             onError: World.onError
         });
 
@@ -79,7 +79,7 @@ var World = {
             loaded. Depending on the size of the model and where it is stored (locally or remotely) it might take
             some time to completely load and it is recommended to inform the user about the loading time.
         */
-        this.modelCar = new AR.Model("assets/saturn.wt3", {
+        this.modelCar = new AR.Model("assets/rosette.wt3", {
             onClick: World.toggleAnimateModel,
             onLoaded: World.showInfoBar,
             onError: World.onError,

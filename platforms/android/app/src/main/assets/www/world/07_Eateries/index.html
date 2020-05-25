@@ -1,0 +1,90 @@
+<!-- Browse Cafes and Restaurants -->
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- disables pinch-scaling of the webview, so that gestures only do what they're supposed to -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"/>
+
+    <title></title>
+
+    <script src="https://www.wikitude.com/libs/architect.js"></script>
+    <script type="text/javascript" src="../ade.js"></script>
+	<script type="text/javascript" src="../../js/index.js"></script>
+	<link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="css/default.css">
+</head>
+
+<body>
+	<div id="infoBox" class="info">
+    <div  id="attractionName" class="text">Tap on a venue to find out more!</div>
+    </div>
+	<!-- overlay to be displayed when the user presses the details button -->
+	<div id="infoOverlay">
+		<p id="attDesc">Tap on a venue for information!</p>
+		<hr>
+		<h4 id="distField">Distance: <a id="poi-detail-distance">?</a></h4>
+	</div>
+	
+	
+	<div id="foodCafeToggler">
+		<button id="cafeToggle" onclick="toggleCafe()"><img height="50px" width="50px" src="assets/coffeeToggle.png"></button>
+		<button id="foodToggle" onclick="toggleFood()"><img height="50px" width="50px" src="assets/eatToggle.png"></button>
+	</div>
+	<script src="js/nav.js"></script>
+    <script src="js/3dmodelatgeolocation.js"></script>
+	<script>
+		function showInfo(){
+			var element= document.getElementById("infoOverlay");
+			var ibox = document.getElementById("infoBox");
+			if(element.style.display === "initial"){
+			element.style.display = "none";
+			ibox.style.display = "initial";
+			console.log("hide");
+			}else if(element.style.display = "none"){
+				element.style.display = "initial";
+				ibox.style.display = "none";
+				console.log("show");
+				
+			}
+		};
+		function toggleFood(){
+					switch(World.geoObject4.enabled) {
+					  case true:
+						World.geoObject4.enabled = false;
+						World.geoObject5.enabled = false;
+						World.geoObject6.enabled = false;
+						break;
+					  case false:
+						World.geoObject4.enabled = true;
+						World.geoObject5.enabled = true;
+						World.geoObject6.enabled = true;
+						break;
+					  default:
+						World.geoObject4.enabled = false;
+						World.geoObject5.enabled = false;
+						World.geoObject6.enabled = false;
+					}
+				};
+		function toggleCafe(){
+					switch(World.geoObject1.enabled) {
+					  case true:
+						World.geoObject1.enabled = false;
+						World.geoObject2.enabled = false;
+						World.geoObject3.enabled = false;
+						break;
+					  case false:
+						World.geoObject1.enabled = true;
+						World.geoObject2.enabled = true;
+						World.geoObject3.enabled = true;
+						break;
+					  default:
+						World.geoObject1.enabled = false;
+						World.geoObject2.enabled = false;
+						World.geoObject3.enabled = false;
+					}
+				};
+	</script>
+</body>
+</html>

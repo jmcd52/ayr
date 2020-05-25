@@ -1,3 +1,4 @@
+<!-- 3D model at geolocation -->
 <!DOCTYPE HTML>
 <html>
 
@@ -10,11 +11,45 @@
 
     <script src="https://www.wikitude.com/libs/architect.js"></script>
     <script type="text/javascript" src="../ade.js"></script>
-
+	<script type="text/javascript" src="../../js/index.js"></script>
+	<link rel="stylesheet" href="../../css/styles.css">
     <link rel="stylesheet" href="css/default.css">
 </head>
 
 <body>
+	<div id="infoOverlay">
+		<h1>Fullwood House</h1>
+		<img id="detailImg" src="assets/proom.png"/>
+		<hr>
+		<p>Lorem ipsum dolor sit amet...</p>
+		<hr>
+		<h4>Distance: <a id="poi-detail-distance"></a></h4>
+	</div>
+<div id="snapContainer"></div>
+		<footer>
+			<div id="bottom">
+				<table style="width:100%">
+				<tr>
+					<td class="btmNavItemArea"><button class="btmNavItem" onClick="showInfo();">Details</button></td>
+				</tr>
+				</table>
+			</div>
+		</footer>
+	<script src="js/nav.js"></script>
     <script src="js/3dmodelatgeolocation.js"></script>
+	<script src="js/snaptoscreen.js"></script>
+	<script>
+		function showInfo(){
+			var element= document.getElementById("infoOverlay");
+			if(element.style.display === "initial"){
+			element.style.display = "none";
+			console.log("hide");
+			}else if(element.style.display = "none"){
+				element.style.display = "initial";
+				console.log("show");
+				
+			}
+		};
+	</script>
 </body>
 </html>

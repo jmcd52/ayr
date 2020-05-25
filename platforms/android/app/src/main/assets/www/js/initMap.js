@@ -1,14 +1,14 @@
 var map;
 var worldBounds = {
-	north:80,
-	south:-80,
-	west:-180,
-	east:180,
+	north:51.992839,
+	south:51.720586,
+	west:-2.414698,
+	east:-1.694470,
 };
-var cPoint = {lat: 60, lng:-5};
+var cPoint = {lat: 51.899284, lng:-2.078342};
 //global variables for marker arrays
 var geoMarkers = [];
-var countryMarkers = [];
+var attractionMarkers = [];
 //global variable defining the root location for marker icon images
 var iconBase = "./img/icons/";
 //country co-ordinates
@@ -20,7 +20,7 @@ function initMap() {
 			latLngBounds: worldBounds,
 			strictBounds: false,
 		},
-		zoom: 2.5,
+		zoom: 12,
 		mapTypeId: 'roadmap',
 		zoomControl: true,
   		mapTypeControl: false,
@@ -31,7 +31,7 @@ function initMap() {
 	};
 	map = new google.maps.Map(document.getElementById('map'), mapOptions);
 	geolocation();
-	addCountryMarkers();
+	addAttractionMarkers();
 
 	};
 
@@ -97,19 +97,19 @@ function removeMarkers(){
     }
 }
 
-function addCountryMarkers(){
-	var fraLat = 46.445794;
-	var fraLng = 2.362551;
+function addAttractionMarkers(){
+	var pumpLat = 51.911970;
+	var pumpLng = -2.067357;
 	var ukLat = 53.226299;
 	var ukLng = -1.676103;
 	var gerLat = 50.967340;
 	var gerLng = 10.321835;
 	
-	//create marker showing France
-				var markerFra = new google.maps.Marker({
-					position: new google.maps.LatLng( fraLat, fraLng ),
+	//create marker showing Pump Rooms
+				var markerPump = new google.maps.Marker({
+					position: new google.maps.LatLng( pumpLat, pumpLng ),
 					map: map,
-					title: 'France',
+					title: 'Pittville Pump Rooms',
 				});
 	
 	//create marker showing UK
@@ -127,11 +127,11 @@ function addCountryMarkers(){
 				});
 				
 				//put the marker into the marker array
-				countryMarkers.push(markerFra, markerUK, markerGer);
+				attractionMarkers.push(markerPump, markerUK, markerGer);
 				
 				//add marker link
-				markerFra.addListener('click', function(){
-					app.loadCustomARchitectWorldFromURL('www/world/01_ImageTracking_1_ImageOnTarget/index.html');
+				markerPump.addListener('click', function(){
+					app.loadCustomARchitectWorldFromURL('www/world/07_3dModels_6_3dModelAtGeoLocation/index.html');
 				});
 }
 
